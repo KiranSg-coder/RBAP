@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { deleteUser, get, put } from "../services/ApiEndpoint";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux"; // Importing to access user role
 
-export default function Admin() {
+export default function SuperAdmin() {
   const [users, setUsers] = useState("");
   const navigate = useNavigate();
-  const loggedInUser = useSelector((state) => state.Auth.user); // Getting logged-in user
 
   useEffect(() => {
     const GetUsers = async () => {
       try {
-        const request = await get("/api/admin/getuser");
+        const request = await get("/api/superadmin/getuser");
         const respnse = request.data;
         if (request.status === 200) {
           setUsers(respnse.users);
@@ -26,7 +24,7 @@ export default function Admin() {
 
   const handleDelet = async (id) => {
     try {
-      const request = await deleteUser(`/api/admin/delete/${id}`);
+      const request = await deleteUser(`/api/superadmin/delete/${id}`);
       const response = request.data;
       if (request.status === 200) {
         toast.success(response.message);
@@ -40,13 +38,8 @@ export default function Admin() {
   };
 
   const handleRoleChange = async (id, newRole) => {
-    if (loggedInUser.role !== "superadmin") {
-      toast.error("Only superadmin has access to change roles.");
-      return;
-    }
-
     try {
-      const request = await put(`/api/admin/update-role/${id}`, {
+      const request = await put(`/api/superadmin/update-role/${id}`, {
         role: newRole,
       });
       const response = request.data;

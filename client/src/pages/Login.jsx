@@ -18,16 +18,18 @@ function Login() {
     console.log(email, password);
     try {
       const request = await post("/api/auth/login", { email, password });
-      const reponse = request.data;
+      const response = request.data;
 
       if (request.status == 200) {
-        if (reponse.user.role == "admin") {
+        if (response.user.role == "superadmin") {
+          navigate("/superadmin");
+        } else if (response.user.role == "admin") {
           navigate("/admin");
-        } else if (reponse.user.role == "user") {
+        } else if (response.user.role == "user") {
           navigate("/");
         }
-        toast.success(reponse.message);
-        dispatch(SetUser(reponse.user));
+        toast.success(response.message);
+        dispatch(SetUser(response.user));
       }
       console.log(reponse);
     } catch (error) {

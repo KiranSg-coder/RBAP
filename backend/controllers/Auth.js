@@ -18,7 +18,7 @@ const register = async (req, res) => {
 
         res.status(200).json({ message: "user register successfully", newUser })
     } catch (error) {
-        res.status(500).json({ success: false, message: "interanl server ereo" })
+        res.status(500).json({ success: false, message: "interanl server error" })
         console.log(error)
     }
 }
@@ -39,7 +39,7 @@ const Login = async (req, res) => {
             return res.status(404).json({ success: false, message: "Invalid credentials" })
 
         }
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRETE)
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET)
 
         res.cookie('token', token, {
             httpOnly: true,
@@ -50,7 +50,7 @@ const Login = async (req, res) => {
         res.status(200).json({ success: true, message: "Login successfully", user, token })
 
     } catch (error) {
-        res.status(500).json({ success: false, message: "interanl server ereo" })
+        res.status(500).json({ success: false, message: "interanl server error" })
         console.log(error)
     }
 }
@@ -59,7 +59,7 @@ const Logout = async (req, res) => {
         res.clearCookie('token')
         res.status(200).json({ message: "user Logout successfully" })
     } catch (error) {
-        res.status(500).json({ success: false, message: "interanl server ereo" })
+        res.status(500).json({ success: false, message: "internal server error" })
         console.log(error)
     }
 }

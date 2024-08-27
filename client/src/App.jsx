@@ -5,13 +5,16 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
+import SuperAdmin from "./pages/SuperAdmin";
 import { Toaster } from "react-hot-toast";
 import AdminLaouts from "./Layouts/AdminLaouts";
 import UserLayout from "./Layouts/UserLayout";
-// import PbulicLayout from './Layouts/PublicLayouts'
 import PublicLayouts from "./Layouts/PublicLayouts";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "./redux/AuthSlice";
+import SuperAdminLayout from "./Layouts/SuperAdminLayout";
+import ManagerLayout from "./Layouts/ManagerLayout";
+import Manager from "./pages/Manager";
 
 export default function App() {
   const user = useSelector((state) => state.Auth.user);
@@ -30,6 +33,12 @@ export default function App() {
           </Route>
           <Route path="/admin" element={<AdminLaouts />}>
             <Route index element={<Admin />} />
+          </Route>
+          <Route path="/superadmin" element={<SuperAdminLayout />}>
+            <Route index element={<SuperAdmin />} />
+          </Route>
+          <Route path="/manager" element={<ManagerLayout />}>
+            <Route index element={<Manager />} />
           </Route>
           <Route path="/" element={<PublicLayouts />}>
             <Route path="login" element={<Login />} />

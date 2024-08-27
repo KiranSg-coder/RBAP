@@ -6,7 +6,7 @@ import { isAdmin } from '../middleware/verifyToken.js'
 
 const AdminRoutes = express.Router()
 AdminRoutes.get('/getuser', isAdmin, Getuser)
-AdminRoutes.delete('/delet/:id', isAdmin, deletUser)
-
+AdminRoutes.delete('/delete/:id', isAdmin, deletUser)
+// AdminRoutes.put('/update-role/:id', isAdmin, isSuperAdmin, updateUserRole);
 
 export default AdminRoutes
