@@ -161,10 +161,6 @@ This project is a full-stack application that demonstrates a role-based login/lo
   - `DELETE /api/superadmin/delete/:id`: Delete user by SuperAdmin
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - [React](https://reactjs.org/)
