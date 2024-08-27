@@ -159,6 +159,28 @@ This project is a full-stack application that demonstrates a role-based login/lo
   - `GET /api/superadmin/getuser`: Get users for SuperAdmin
   - `PUT /api/superadmin/update-role/:id`: Update user role by SuperAdmin
   - `DELETE /api/superadmin/delete/:id`: Delete user by SuperAdmin
+    
+## Login Credentials & Roles
+
+### Roles Overview:
+
+| Role        | Description                                          | Access Areas                                      |
+|-------------|------------------------------------------------------|--------------------------------------------------|
+| **Superadmin** | Full control over the website, managing all users and roles. | SuperAdmin, Admin, and user pages.               |
+| **Admin**      | Manages users, updates roles (except superadmin), deletes users. | Admin and user pages.                            |
+| **Manager**    | Controls specific sections with limited access rights.  | Manager and user pages.                          |
+| **User**       | Basic access to public and user-specific features. | General user pages.                              |
+
+### Example Login Credentials:
+
+You can use the following credentials to log in to the system for testing purposes:
+
+| Role       | Email                | Password   |
+|------------|----------------------|------------|
+| Superadmin | `superadmin@gmail.com` | `1234` |
+| Admin      | `admin@gmail.com`      | `1234` |
+| Manager    | `manager@gmail.com`    | `1234` |
+| User       | `user@gmail.com`       | `1234` |
 
 
 ## Acknowledgements
