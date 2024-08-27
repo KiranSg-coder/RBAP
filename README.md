@@ -85,29 +85,61 @@ This project is a full-stack application that demonstrates a role-based login/lo
 
 ## Frontend Structure
 
-- **Layouts**:
-  - `AdminLayouts.jsx`: Layout for Admin routes
-  - `ManagerLayouts.jsx`: Layout for Manager routes
-  - `PublicLayouts.jsx`: Layout for public routes
-  - `SuperAdminLayouts.jsx`: Layout for SuperAdmin routes
-  - `UserLayouts.jsx`: Layout for User routes
+```
+        client/
+        ├── src/
+        │   ├── Layouts/
+        │   │   ├── AdminLayout.jsx
+        │   │   ├── ManagerLayout.jsx
+        │   │   ├── PublicLayout.jsx
+        │   │   ├── SuperAdminLayout.jsx
+        │   │   ├── UserLayout.jsx
+        │   ├── pages/
+        │   │   ├── Admin.jsx
+        │   │   ├── Home.jsx
+        │   │   ├── Login.jsx
+        │   │   ├── Manager.jsx
+        │   │   ├── Register.jsx
+        │   │   ├── SuperAdmin.jsx
+        │   ├── redux/
+        │   │   ├── AuthSlice.js
+        │   │   ├── Store.js
+        │   ├── services/
+        │   │   ├── ApiEndpoint.js
+        ├── App.css
+        ├── App.jsx
+        ├── main.jsx
+        └── package-lock.json
+        ├── package.json
+        └── README.md
+```
 
-- **Pages**:
-  - `Admin.jsx`: Admin page for managing users
-  - `Manager.jsx`: Manager page for managing users
-  - `SuperAdmin.jsx`: SuperAdmin page for managing users
-  - `Home.jsx`: Home page with user details
-  - `Login.jsx`: Login page
-  - `Register.jsx`: Registration page
+## Backend Structure
 
-- **Redux**:
-  - `AuthSlice.js`: Redux slice for authentication
-  - `store.js`: Redux store configuration
-
-- **Services**:
-  - `ApiEndpoint.js`: Axios instance for API calls
-
-- **App.jsx**: Main application component with routing
+```
+        backend/
+        ├── src/
+        │   ├── controllers/
+        │   │   ├── Admin.js
+        │   │   ├── Auth.js
+        │   │   ├── MangerContoller.js
+        │   │   ├── SuperAdmin.js
+        │   ├── routes/
+        │   │   ├── Auth.js
+        │   │   ├── adminRoutes.js
+        │   │   ├── managerRoutes.js
+        │   │   ├── superAdminRoutes.js
+        │   ├── models/
+        │   │   ├── User.js
+        │   ├── middleware/
+        │   │   ├── verifyToken.js
+        │   ├── utlis/
+        │   │   ├── db.js
+        │   ├── server.js
+        ├── .env
+        ├── package.json
+        └── README.md
+```
 
 ## Backend Endpoints
 
