@@ -177,10 +177,10 @@ You can use the following credentials to log in to the system for testing purpos
 
 | Role       | Email                | Password   |
 |------------|----------------------|------------|
-| Superadmin | `superadmin@gmail.com` | `1234` |
-| Admin      | `admin@gmail.com`      | `1234` |
-| Manager    | `manager@gmail.com`    | `1234` |
-| User       | `user@gmail.com`       | `1234` |
+| Superadmin | `superadmin1@gmail.com` | `1234` |
+| Admin      | `admin1@gmail.com`      | `1234` |
+| Manager    | `manager1@gmail.com`    | `1234` |
+| User       | `user1@gmail.com`       | `1234` |
 
 
 ## Acknowledgements
