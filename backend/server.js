@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cookieparser())
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: 'rbap-git-master-krn-projects.vercel.app'
 }));
 
 app.use('/api/auth', AuthRoutes)
